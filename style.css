@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+}
+header {
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+    font-weight: lighter;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1em;
+}
+nav ul li a:hover {
+    color: #FB7D06;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+#head1 {
+    font-weight: 100;
+    font-size: 3.5em;
+    margin: 0;
+    line-height: 1em;
+}
+#head2 {
+    font-weight: 700;
+    font-size: 5em;
+    margin: 0;
+    color: #FB7D06;
+    line-height: 1em;
+}
+#head3{
+    font-weight: 700;
+    font-size: 4em;
+    margin: 0;
+    color: #FB7D06;
+    line-height: 1em;
+}
+#head4 {
+    font-weight: 200;
+    font-style: italic;
+    margin: 0;
+    color: #FB7D06;
+    line-height: 2em;
+    letter-spacing: 0.03em;
+}
+#presentation {
+    margin-block: 10vh;
+    margin-inline: 33vw;
+}
+.description {
+    margin: 0;
+}
+.down-button-container{
+    display: flex;
+    justify-content: center;
+    margin-block: 3vh;
+}
+.down-button {
+    cursor: pointer;
+    opacity: 50%;
+    transition: opacity 0.3s ease-in-out;
+}
+.down-button:hover {
+    opacity: 100%;
+}
+.content {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.box{
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+#upButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Asegura que el SVG esté por encima de otros elementos */
+    cursor: pointer;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease-in-out; /* Transición suave de opacidad */
+}
+#upButton.show {
+    opacity: 50%; /* El SVG será completamente visible cuando se aplique esta clase */
+}
+#upButton:hover {
+    opacity: 100%;
+}
+#ccdoc-banner-section {
+    position: relative;
+    width: 100vw;
+    margin-bottom: 8vh;
+}
+#ccdoc-banner-base {
+    width: 100%;
+    object-fit: cover; /* Para cubrir el contenedor sin deformar */
+}
+#ccdoc-banner-overlay {
+    position: absolute;
+    top: 80%;       /* Centrado vertical */
+    left: 93%;      /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Para ajustar el centro exacto */
+    width: 10%;   /* Tamaño de la imagen que va encima */
+    height: auto;
+}
+.description-section {
+    margin-inline: 20vw;
+    margin-bottom: 8vh;
+    text-align: justify;
+}
+.description-text {
+    font-weight: 300;
+    font-size: 1.5em;
+}
+#ccdoc-idfa-catalog-section {
+    display: flex;
+    margin-inline: 8vw;
+    gap: 5vw;
+    max-height: 60vh;
+    margin-bottom: 8vh;
+}
+#ccdoc-idfa-catalog-view {
+    position: relative;
+    flex: 6;
+}
+#ccdoc-idfa-catalog-view-base {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+#ccdoc-idfa-catalog-view-overlay {
+    position: absolute;
+    display: none;
+}
+#ccdoc-idfa-catalog-preview {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    gap: 5%;
+}
+#ccdoc-idfa-catalog-preview div {
+    height: 100%;
+}
+#ccdoc-idfa-catalog-preview div img{
+    width: 100%;
+    display: block;
+    max-height: 100%;
+}
+#ccdoc-idfa-catalog-preview-1 {
+    height: 47.5%;
+    width: 100%;
+}
+#ccdoc-idfa-catalog-preview-1 label img{
+    cursor: pointer;
+    display: block;
+}
+#ccdoc-idfa-catalog-preview-1 input[type="radio"]:checked + label img {
+    opacity: 1; /* Hace que la imagen seleccionada sea totalmente opaca */
+    outline: 5px solid #696969; /* Resalta la imagen seleccionada */
+}
+#ccdoc-idfa-catalog-preview-2 {
+    height: 47.5%;
+}
+#ccdoc-idfa-catalog-preview-2 label img{
+    cursor: pointer;
+    box-sizing: border-box;
+}
+#ccdoc-idfa-catalog-preview-2 input[type="radio"]:checked + label img {
+    opacity: 1; /* Hace que la imagen seleccionada sea totalmente opaca */
+    outline: 5px solid #696969; /* Resalta la imagen seleccionada */
+}
+.title-1-container {
+    margin-bottom: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.title-1-div {
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.title-2-container {
+    display: inline-block;
+    align-items: center;
+    width: auto;
+    background-color: #2098CC;
+    border-radius: 0 35px 35px 0;
+}
+.title-2-div {
+    margin-block: 2vh;
+    margin-left: 20vw;
+    margin-right: 1.5vw;
+}
+.title-2-text {
+    font-weight: 600; 
+    font-size: 2em; 
+    font-style: italic; 
+    color: #FFFFFF;
+}
+.title-3-container {
+    display: inline-block;
+    align-items: center;
+    width: auto;
+    background-color: #22A092;
+    border-radius: 0 35px 35px 0;
+}
+.title-3-div {
+    margin-block: 2vh;
+    margin-left: 20vw;
+    margin-right: 1.5vw;
+}
+.title-3-text {
+    font-weight: 600; 
+    font-size: 2em; 
+    font-style: italic; 
+    color: #FFFFFF;
+}
+#ccdoc-idfa-rrss-1-section {
+    display: flex;
+    justify-content: space-between;  /* Distribuye las columnas de manera uniforme */
+    align-items: center;  /* Centra el contenido de las columnas verticalmente */
+    margin-inline: 8vw;
+    margin-bottom: 5vh;
+}
+#ccdoc-idfa-rrss-2-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    margin-inline: 8vw;
+    margin-bottom: 8vh;
+}
+#ccdoc-conecta-rrss-section {
+    align-items: center;
+    margin-inline: 8vw;
+    margin-block: 8vh;
+}
+#ccdoc-conecta-credentials-section {
+    margin-inline: 8vw;
+    margin-block: 8vh;
+}
