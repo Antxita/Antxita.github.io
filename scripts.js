@@ -61,11 +61,11 @@ window.addEventListener('scroll', function() {
     var watermarkDiv = document.getElementById('watermark-div');
     if(banner != null){
         if (banner.id = "ccdoc-banner-section"){
-            watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 20%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>CORPORACIÓN CHILENA DEL DOCUMENTAL</span>";
+            watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 10%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>CORPORACIÓN CHILENA DEL DOCUMENTAL</span>";
         }else if (banner.id = "miradoc-banner-section"){
             watermarkDiv.innerHTML="MIRADOC ESTRENOS";
         }
-        watermarkSection.style.opacity = "80%";
+        watermarkSection.style.opacity = "100%";
     }else{
         watermarkSection.style.opacity = "0%";
     }
