@@ -127,22 +127,32 @@ document.addEventListener('click', function() {
 });
 // Seleccionamos los elementos que queremos resaltar
 const galleryImages = document.querySelectorAll('.horizontal-gallery-image, .vertical-gallery-image');
-
+// Variable para almacenar la última posición del scroll
+let lastScrollTop = 0;
 // Función que se llama cuando el "observador" detecta la intersección de la sección con el viewport
 const highlightImages = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Cuando la sección entra en el viewport, agregamos la clase 'highlight'
-            galleryImages.forEach(image => {
-                image.classList.add('highlight');
-            });
+            // Detectamos si el usuario está scrolleando hacia abajo
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            // Después de 500ms (0.5 segundos), eliminamos la clase 'highlight' para que el efecto sea momentáneo
-            setTimeout(() => {
+            // Comparamos la posición actual del scroll con la anterior
+            if (currentScrollTop < lastScrollTop) {
+                // El usuario está scrolleando hacia abajo
                 galleryImages.forEach(image => {
-                    image.classList.remove('highlight');
+                    image.classList.add('highlight');
                 });
-            }, 500);  // 500ms = 0.5 segundos
+
+                // Después de 500ms (0.5 segundos), eliminamos la clase 'highlight' para que el efecto sea momentáneo
+                setTimeout(() => {
+                    galleryImages.forEach(image => {
+                        image.classList.remove('highlight');
+                    });
+                }, 500);  // 500ms = 0.5 segundos
+            }
+
+            // Actualizamos la última posición del scroll
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
         }
     });
 };
@@ -150,7 +160,7 @@ const highlightImages = (entries, observer) => {
 // Crear un observador con las opciones adecuadas
 const observer = new IntersectionObserver(highlightImages, {
     root: null, // Utiliza el viewport como la raíz
-    threshold: 0.5 // Actúa cuando el 50% de la sección es visible
+    threshold: 0.7 // Actúa cuando el 50% de la sección es visible
 });
 
 // Seleccionamos la sección con el id 'ccdoc-conecta-diplomas-catalog-section'
