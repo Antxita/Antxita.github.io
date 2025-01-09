@@ -160,7 +160,7 @@ const highlightImages = (entries, observer) => {
 // Crear un observador con las opciones adecuadas
 const observer = new IntersectionObserver(highlightImages, {
     root: null, // Utiliza el viewport como la raíz
-    threshold: 0.7 // Actúa cuando el 50% de la sección es visible
+    threshold: 0.5 // Actúa cuando el 50% de la sección es visible
 });
 
 // Seleccionamos la sección con el id 'ccdoc-conecta-diplomas-catalog-section'
