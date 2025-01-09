@@ -166,5 +166,62 @@ const observer = new IntersectionObserver(highlightImages, {
 // Seleccionamos la sección con el id 'ccdoc-conecta-diplomas-catalog-section'
 const section = document.querySelector('#ccdoc-conecta-diplomas-catalog-section'); // Selecciona la sección con el id específico
 
-// Iniciar el observador en la sección
-observer.observe(section);
+const deviceHasPointer = window.matchMedia('(pointer: fine)').matches;
+const container = document.querySelector('.magnifying-glass');
+const magnifier = document.querySelector('.magnifying-glass__magnifier');
+const enlargedImage = document.querySelector('.magnifying-glass__enlarged-image');
+const speed = 0.2;
+
+let containerRect = {};
+let mouse = { x: 0, y: 0 };
+let glass = { x: 0, y: 0 };
+let enlargedImagePos = { x: 0, y: 0 };
+let aboveImage = false;
+let runMovement = false;
+    
+function init () {
+  if (deviceHasPointer) {
+    containerRect = container.getBoundingClientRect();
+
+    window.addEventListener('mousemove', this.getMousePos);
+    container.addEventListener('mouseenter', this.showGlass);
+    container.addEventListener('mouseleave', this.hideGlass);
+    moveGlass();
+  }
+}
+function getMousePos (e) {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+}
+function moveGlass () {
+  // Calculate smooth mouse movement
+  glass.x = lerp(glass.x, mouse.x, speed);
+  glass.y = lerp(glass.y, mouse.y, speed);
+  
+  // Calculate enlarged image position
+  enlargedImagePos.x = (glass.x - containerRect.left) / containerRect.width * -100;
+  enlargedImagePos.y = (glass.y - containerRect.top) / containerRect.height * -100;
+   
+  // Set style positions
+  magnifier.style.transform = `translate(calc(${glass.x}px - 50%), calc(${glass.y}px  - 50%))`;
+  enlargedImage.style.transform = `translate(${enlargedImagePos.x}%, ${enlargedImagePos.y}%)`;
+
+  if (runMovement)
+    requestAnimationFrame(moveGlass);
+}
+function showGlass () {
+  containerRect = container.getBoundingClientRect();
+  aboveImage = true;
+  runMovement = true;
+  magnifier.style.opacity = '1';
+  moveGlass();
+}
+function hideGlass () {
+  aboveImage = false;
+  magnifier.style.opacity = '0';
+  setTimeout(() => { runMovement = false; }, 250);
+}
+function lerp (a, b, n) {
+  return (1 - n) * a + n * b;
+}
+init();

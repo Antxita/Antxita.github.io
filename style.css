@@ -365,3 +365,36 @@ nav ul li a:hover {
 #ccdoc-conecta-pantallas-section img {
     width: 100%;
 }
+#ccdoc-conecta-programa-section{
+    display: flex;
+    margin-bottom: 5vh;
+    justify-content: center;
+}
+.magnifying-glass {
+    display: flex;
+    width: 50vw;
+    background: black;
+}
+.magnifying-glass__img {
+    width: 100%;
+}
+.magnifying-glass__magnifier {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    overflow: hidden;
+    width: 15vw;
+    height: 15vw;
+    border: 10px black;
+    border-radius: 50%;
+    background-color: transparent;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.magnifying-glass__enlarged-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+}
