@@ -289,7 +289,7 @@ nav ul li a:hover {
     align-items: flex-start; /* Alinea los elementos al principio verticalmente */
     margin: 0 auto; /* Añadimos margen de 8vw a ambos lados */
     width: 65vw; /* Ajustamos el ancho para que el contenedor ocupe el espacio restante */
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
     gap: 1vw;
 }
 
@@ -302,7 +302,7 @@ nav ul li a:hover {
 .vertical-gallery {
     display: flex;
     flex-direction: column; /* Disposición en columna */
-    gap: 10px; /* Aplica el margen a los lados de la galería */
+    gap: 1.5vh; /* Aplica el margen a los lados de la galería */
     width: 22%; /* La galería ocupará el 40% del ancho */
 }
 
@@ -316,7 +316,7 @@ nav ul li a:hover {
     width: 100%;
     height: auto;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efecto de zoom al hacer clic */
@@ -343,17 +343,25 @@ nav ul li a:hover {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-
-/* Efecto de zoom al hacer click */
 .horizontal-gallery-image.clicked {
     transform: scale(1.2);
+}
+.highlight {
+    transform: scale(1.05);
 }
 #ccdoc-conecta-diplomas-catalog-section{
     margin-bottom: 5vh;
 }
-
-#ccdoc-conecta-diplomas-catalog-legend{
+.legend{
     text-align: center;
     font-weight: 200;
     font-size: large;
+}
+#ccdoc-conecta-pantallas-section{
+    margin-inline: 8vw;
+    width: 84vw;
+    margin-bottom: 5vh;
+}
+#ccdoc-conecta-pantallas-section img {
+    width: 100%;
 }

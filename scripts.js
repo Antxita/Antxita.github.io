@@ -125,3 +125,36 @@ document.addEventListener('click', function() {
         img.classList.remove('clicked');
     });
 });
+// Seleccionamos los elementos que queremos resaltar
+const galleryImages = document.querySelectorAll('.horizontal-gallery-image, .vertical-gallery-image');
+
+// Función que se llama cuando el "observador" detecta la intersección de la sección con el viewport
+const highlightImages = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Cuando la sección entra en el viewport, agregamos la clase 'highlight'
+            galleryImages.forEach(image => {
+                image.classList.add('highlight');
+            });
+
+            // Después de 500ms (0.5 segundos), eliminamos la clase 'highlight' para que el efecto sea momentáneo
+            setTimeout(() => {
+                galleryImages.forEach(image => {
+                    image.classList.remove('highlight');
+                });
+            }, 500);  // 500ms = 0.5 segundos
+        }
+    });
+};
+
+// Crear un observador con las opciones adecuadas
+const observer = new IntersectionObserver(highlightImages, {
+    root: null, // Utiliza el viewport como la raíz
+    threshold: 0.5 // Actúa cuando el 50% de la sección es visible
+});
+
+// Seleccionamos la sección con el id 'ccdoc-conecta-diplomas-catalog-section'
+const section = document.querySelector('#ccdoc-conecta-diplomas-catalog-section'); // Selecciona la sección con el id específico
+
+// Iniciar el observador en la sección
+observer.observe(section);
