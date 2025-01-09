@@ -282,3 +282,78 @@ nav ul li a:hover {
     transform-origin: top right;
     white-space: nowrap; 
 }
+.preview-container {
+    display: flex; /* Usamos Flexbox para que los elementos estén alineados en una fila */
+    justify-content: center; /* Centra los elementos dentro del contenedor */
+    text-align: center;
+    align-items: flex-start; /* Alinea los elementos al principio verticalmente */
+    margin: 0 auto; /* Añadimos margen de 8vw a ambos lados */
+    width: 65vw; /* Ajustamos el ancho para que el contenedor ocupe el espacio restante */
+    margin-bottom: 5vh;
+    gap: 1vw;
+}
+
+/* Estilos para el div de la izquierda */
+.preview {
+    width: 78%; /* Este div ocupará el 50% del ancho disponible */
+}
+
+/* Estilo para la galería dispuesta en columna */
+.vertical-gallery {
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+    gap: 10px; /* Aplica el margen a los lados de la galería */
+    width: 22%; /* La galería ocupará el 40% del ancho */
+}
+
+/* Estilo para los items de la galería */
+.vertical-gallery-item {
+    width: 100%; /* Las imágenes ocuparán todo el ancho disponible */
+}
+
+/* Estilos de las imágenes */
+.vertical-gallery-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom al hacer clic */
+.vertical-gallery-image.clicked {
+    transform: scale(1.3);
+}
+
+.horizontal-gallery {
+    display: flex;
+    gap: 10px;
+    margin: 0 auto; /* Añadimos margen de 8vw a ambos lados */
+    width: 65vw; /* Ajustamos el ancho para que el contenedor ocupe el espacio restante */
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+.horizontal-gallery-item {
+    width: 33%;
+}
+
+.horizontal-gallery-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom al hacer click */
+.horizontal-gallery-image.clicked {
+    transform: scale(1.2);
+}
+#ccdoc-conecta-diplomas-catalog-section{
+    margin-bottom: 5vh;
+}
+
+#ccdoc-conecta-diplomas-catalog-legend{
+    text-align: center;
+    font-weight: 200;
+    font-size: large;
+}

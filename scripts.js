@@ -70,3 +70,58 @@ window.addEventListener('scroll', function() {
         watermarkSection.style.opacity = "0%";
     }
 });
+// Obtener todos los elementos de imagen de la galería
+const horizontalImages = document.querySelectorAll('.horizontal-gallery-image');
+const verticalImages = document.querySelectorAll('.vertical-gallery-image');
+
+// Añadir un evento click a cada imagen de la galería
+horizontalImages.forEach(image => {
+    image.addEventListener('click', function(event) {
+        // Prevenir la propagación del evento hacia el documento (evita que se deseleccione inmediatamente)
+        event.stopPropagation();
+        // Si la imagen ya tiene la clase 'clicked', se deselecciona (se elimina la clase)
+        if (this.classList.contains('clicked')) {
+            this.classList.remove('clicked');
+        } else {
+            // Si no tiene la clase 'clicked', se elimina de todas las imágenes y se agrega a la clicada
+            horizontalImages.forEach(img => {
+                img.classList.remove('clicked');
+            });
+            verticalImages.forEach(img => {
+                img.classList.remove('clicked');
+            });
+            this.classList.add('clicked');
+        }
+    });
+});
+// Añadir un evento click a cada imagen de la galería
+verticalImages.forEach(image => {
+    image.addEventListener('click', function(event) {
+        // Prevenir la propagación del evento hacia el documento (evita que se deseleccione inmediatamente)
+        event.stopPropagation();
+        // Si la imagen ya tiene la clase 'clicked', se deselecciona (se elimina la clase)
+        if (this.classList.contains('clicked')) {
+            this.classList.remove('clicked');
+        } else {
+            // Si no tiene la clase 'clicked', se elimina de todas las imágenes y se agrega a la clicada
+            horizontalImages.forEach(img => {
+                img.classList.remove('clicked');
+            });
+            verticalImages.forEach(img => {
+                img.classList.remove('clicked');
+            });
+            this.classList.add('clicked');
+        }
+    });
+});
+
+// Añadir un evento click al documento para deseleccionar cualquier imagen si se hace clic fuera de la galería
+document.addEventListener('click', function() {
+    // Eliminar la clase 'clicked' de todas las imágenes cuando se hace clic fuera de la galería
+    horizontalImages.forEach(img => {
+        img.classList.remove('clicked');
+    });
+    verticalImages.forEach(img => {
+        img.classList.remove('clicked');
+    });
+});
