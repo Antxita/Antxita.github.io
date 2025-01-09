@@ -268,3 +268,17 @@ nav ul li a:hover {
     margin-inline: 8vw;
     margin-block: 8vh;
 }
+#watermark-section {
+    position: fixed; 
+    z-index: 1000; 
+    right: 2.2vw;
+    top: 75%;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+#watermark-div {
+    transform: rotate(90deg);
+    transform-origin: top right;
+    white-space: nowrap; 
+}
