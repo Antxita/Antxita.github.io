@@ -134,10 +134,10 @@ const highlightImages = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             // Detectamos si el usuario está scrolleando hacia abajo
-            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
             // Comparamos la posición actual del scroll con la anterior
-            if (currentScrollTop < lastScrollTop) {
+            if (currentScrollTop <= lastScrollTop) {
                 // El usuario está scrolleando hacia abajo
                 galleryImages.forEach(image => {
                     image.classList.add('highlight');
@@ -160,7 +160,7 @@ const highlightImages = (entries, observer) => {
 // Crear un observador con las opciones adecuadas
 const observer = new IntersectionObserver(highlightImages, {
     root: null, // Utiliza el viewport como la raíz
-    threshold: 0.5 // Actúa cuando el 50% de la sección es visible
+    threshold: 0.7 // Actúa cuando el 50% de la sección es visible
 });
 
 // Seleccionamos la sección con el id 'ccdoc-conecta-diplomas-catalog-section'

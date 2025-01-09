@@ -295,7 +295,7 @@ nav ul li a:hover {
 
 /* Estilos para el div de la izquierda */
 .preview {
-    width: 78%; /* Este div ocupará el 50% del ancho disponible */
+    width: 78.39%; /* Este div ocupará el 50% del ancho disponible */
 }
 
 /* Estilo para la galería dispuesta en columna */
@@ -303,7 +303,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column; /* Disposición en columna */
     gap: 1.5vh; /* Aplica el margen a los lados de la galería */
-    width: 22%; /* La galería ocupará el 40% del ancho */
+    width: 21.61%; /* La galería ocupará el 40% del ancho */
 }
 
 /* Estilo para los items de la galería */
