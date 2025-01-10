@@ -125,46 +125,38 @@ document.addEventListener('click', function() {
         img.classList.remove('clicked');
     });
 });
-// Seleccionamos los elementos que queremos resaltar
-const galleryImages = document.querySelectorAll('.horizontal-gallery-image, .vertical-gallery-image');
-// Variable para almacenar la última posición del scroll
-let lastScrollTop = 0;
-// Función que se llama cuando el "observador" detecta la intersección de la sección con el viewport
-const highlightImages = (entries, observer) => {
+// Función que se ejecutará cuando el elemento esté en la mitad de la vista
+function handleIntersect(entries, observer) {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Detectamos si el usuario está scrolleando hacia abajo
-            const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
-
-            // Comparamos la posición actual del scroll con la anterior
-            if (currentScrollTop <= lastScrollTop) {
-                // El usuario está scrolleando hacia abajo
-                galleryImages.forEach(image => {
-                    image.classList.add('highlight');
-                });
-
-                // Después de 500ms (0.5 segundos), eliminamos la clase 'highlight' para que el efecto sea momentáneo
-                setTimeout(() => {
-                    galleryImages.forEach(image => {
-                        image.classList.remove('highlight');
-                    });
-                }, 500);  // 500ms = 0.5 segundos
-            }
-
-            // Actualizamos la última posición del scroll
-            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-        }
+      if (entry.isIntersecting) {
+        // Verificamos que el elemento esté al menos a la mitad visible
+        const section = entry.target;
+  
+        // Seleccionamos las imágenes
+        const images = section.querySelectorAll('img.vertical-gallery-image, img.horizontal-gallery-image');
+  
+        // Aplicamos la clase 'scaled' a cada imagen para el efecto de escalado
+        images.forEach(img => {
+          img.classList.add('scaled');
+          // Después de 0.5 segundos, eliminamos el efecto de escalado
+          setTimeout(() => {
+            img.classList.remove('scaled');
+          }, 500);
+        });
+      }
     });
-};
-
-// Crear un observador con las opciones adecuadas
-const observer = new IntersectionObserver(highlightImages, {
-    root: null, // Utiliza el viewport como la raíz
-    threshold: 0.7 // Actúa cuando el 50% de la sección es visible
-});
-
-// Seleccionamos la sección con el id 'ccdoc-conecta-diplomas-catalog-section'
-const section = document.querySelector('#ccdoc-conecta-diplomas-catalog-section'); // Selecciona la sección con el id específico
+  }
+  
+  // Crear el IntersectionObserver
+  const observer = new IntersectionObserver(handleIntersect, {
+    root: null, // El viewport del navegador
+    rootMargin: '0px',
+    threshold: 0.5 // El 50% del elemento debe estar visible
+  });
+  
+  // Observar la sección
+  const section = document.querySelector('#ccdoc-conecta-diplomas-catalog-section');
+  observer.observe(section);
 
 const deviceHasPointer = window.matchMedia('(pointer: fine)').matches;
 const container = document.querySelector('.magnifying-glass');
