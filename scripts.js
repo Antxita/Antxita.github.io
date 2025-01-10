@@ -226,24 +226,12 @@ const images = document.querySelectorAll('.ccdoc-idfa-catalog-image');
 let currentIndex = 0;
 let currentType = 'type1';
 
-// Función para mostrar solo las imágenes de un tipo seleccionado
-function filterImages(type) {
+// Mostrar una sola imagen a la vez
+function showImage(index) {
     // Primero ocultamos todas las imágenes
     images.forEach(img => {
         img.classList.remove('visible'); // Remover la clase "visible"
     });
-
-    // Ahora mostramos solo las imágenes del tipo seleccionado
-    const filteredImages = document.querySelectorAll(`.ccdoc-idfa-catalog-image.${type}`);
-    filteredImages.forEach(img => {
-        img.classList.add('visible'); // Agregar la clase "visible" a las imágenes del tipo seleccionado
-    });
-    currentIndex = 0;  // Reset index when switching images
-    showImage(currentIndex);
-}
-
-// Mostrar una sola imagen a la vez
-function showImage(index) {
     let visibleImages = [];
     images.forEach((img, i) => {
         if(img.classList.contains(currentType)){
@@ -262,19 +250,19 @@ function showImage(index) {
 // Evento para cambiar a Tipo 1
 type1Button.addEventListener('click', () => {
     currentType = 'type1';
+    currentIndex = 0;
     type2Button.classList.remove('selected');
     type1Button.classList.add('selected');
-    filterImages('type1');
-    e.preventDefault();
+    showImage(currentIndex);
 });
 
 // Evento para cambiar a Tipo 2
 type2Button.addEventListener('click', () => {
     currentType = 'type2';
+    currentIndex = 0;
     type1Button.classList.remove('selected');
     type2Button.classList.add('selected');
-    filterImages('type2');
-    e.preventDefault();
+    showImage(currentIndex);
 });
 
 // Evento para mostrar la imagen anterior
@@ -287,7 +275,6 @@ prevBtn.addEventListener('click', () => {
     });
     currentIndex = (currentIndex === 0) ? visibleImages.length - 1 : currentIndex - 1;
     showImage(currentIndex);
-    e.preventDefault();
 });
 
 // Evento para mostrar la imagen siguiente
@@ -300,12 +287,13 @@ nextBtn.addEventListener('click', () => {
     });
     currentIndex = (currentIndex === visibleImages.length - 1) ? 0 : currentIndex + 1;
     showImage(currentIndex);
-    e.preventDefault();
 });
 
 // Inicializar con Tipo 1 seleccionado
 window.onload = () => {
+    currentType = 'type1';
+    currentIndex = 0;
     type1Button.classList.add('selected');
     type2Button.classList.remove('selected');
-    filterImages('type1');
+    showImage(currentIndex);
 };
