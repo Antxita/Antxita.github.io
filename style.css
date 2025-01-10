@@ -138,15 +138,6 @@ nav ul li a:hover {
     width: 10%;   /* Tamaño de la imagen que va encima */
     height: auto;
 }
-.description-section {
-    margin-inline: 20vw;
-    margin-bottom: 8vh;
-    text-align: justify;
-}
-.description-text {
-    font-weight: 300;
-    font-size: 1.5em;
-}
 .title-1-container {
     margin-bottom: 8vh;
     display: flex;
@@ -177,23 +168,111 @@ nav ul li a:hover {
     font-style: italic; 
     color: #FFFFFF;
 }
-.title-3-container {
-    display: inline-block;
+.description-section {
+    margin-inline: 20vw;
+    margin-bottom: 8vh;
+    text-align: justify;
+}
+.description-text {
+    font-weight: 300;
+    font-size: 1.5em;
+}
+#ccdoc-idfa-catalog-section{
+    display: flex;
+    justify-content: center;
+    width:84vw;
+    margin-inline: 8vw;
+    margin-bottom: 5vh;
+}
+.container {
+    display: flex;
+    width: 100%;
+}
+.left-side {
+    flex: 5;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: auto;
-    background-color: #22A092;
-    border-radius: 0 35px 35px 0;
+    overflow: hidden;
 }
-.title-3-div {
-    margin-block: 2vh;
-    margin-left: 20vw;
-    margin-right: 1.5vw;
+.gallery-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-.title-3-text {
-    font-weight: 600; 
-    font-size: 2em; 
-    font-style: italic; 
-    color: #FFFFFF;
+.gallery {
+    display: flex;
+    background-image: url('img/ccdoc-idfa-catalog-view-base.png');
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-block: 3vh;
+    padding-inline: 1vw;
+}
+.ccdoc-idfa-catalog-image {
+    display: none;
+    width: 90%;
+    height: auto;
+}
+.ccdoc-idfa-catalog-image img{
+    width: 100%;
+}
+.ccdoc-idfa-catalog-image.visible {
+    display: block;
+    opacity: 1;
+    width: 90%;
+}
+.right-side {
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3vh;
+}
+.radio-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.radio-img {
+    width: 90%;
+    height: auto;
+}
+.radio-btn.selected .radio-img {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2px solid black;
+}
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 6vh;
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    opacity: 30%;
+    transition: opacity 0.3s ease-in-out;
+}
+button:hover{
+    opacity: 100%;
+}
+#prevBtn {
+    left: 5vw;
+}
+#nextBtn {
+    right: 5vw;
 }
 #ccdoc-idfa-rrss-1-section {
     display: flex;
@@ -242,12 +321,10 @@ nav ul li a:hover {
     margin-bottom: 3vh;
     gap: 1vw;
 }
-
 /* Estilos para el div de la izquierda */
 .preview {
     width: 78.39%; /* Este div ocupará el 50% del ancho disponible */
 }
-
 /* Estilo para la galería dispuesta en columna */
 .vertical-gallery {
     display: flex;
@@ -274,7 +351,6 @@ nav ul li a:hover {
 .vertical-gallery-image.clicked {
     transform: scale(1.3);
 }
-
 .horizontal-gallery {
     display: flex;
     gap: 10px;
@@ -352,111 +428,24 @@ nav ul li a:hover {
     left: 50%;
     width: 100vw;
 }
-#ccdoc-idfa-catalog-section{
-    display: flex;
-    justify-content: center;
-    width:84vw;
-    margin-inline: 8vw;
-    margin-bottom: 5vh;
-}
-.container {
-    display: flex;
-    width: 100%;
-}
 
-.left-side {
-    flex: 5;
-    display: flex;
-    justify-content: center;
+.title-3-container {
+    display: inline-block;
     align-items: center;
-    overflow: hidden;
+    width: auto;
+    background-color: #22A092;
+    border-radius: 0 35px 35px 0;
 }
-
-.gallery-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.title-3-div {
+    margin-block: 2vh;
+    margin-left: 20vw;
+    margin-right: 1.5vw;
 }
-.gallery {
-    display: flex;
-    background-image: url('img/ccdoc-idfa-catalog-view-base.png');
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-block: 3vh;
-    padding-inline: 1vw;
-}
-.ccdoc-idfa-catalog-image {
-    display: none;
-    width: 90%;
-    height: auto;
-}
-.ccdoc-idfa-catalog-image img{
-    width: 100%;
-}
-.ccdoc-idfa-catalog-image.visible {
-    display: block;
-    opacity: 1;
-    width: 90%;
-}
-.right-side {
-    flex:2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 3vh;
-}
-
-.radio-btn {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.radio-img {
-    width: 90%;
-    height: auto;
-}
-
-.radio-btn.selected .radio-img {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border: 2px solid black;
-}
-
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    font-size: 6vh;
-    cursor: pointer;
-    padding: 10px;
-    background-color: transparent;
-    opacity: 30%;
-    transition: opacity 0.3s ease-in-out;
-}
-button:hover{
-    opacity: 100%;
-}
-
-#prevBtn {
-    left: 5vw;
-}
-
-#nextBtn {
-    right: 5vw;
+.title-3-text {
+    font-weight: 600; 
+    font-size: 2em; 
+    font-style: italic; 
+    color: #FFFFFF;
 }
 
 @media (max-width: 768px) {
@@ -477,11 +466,14 @@ button:hover{
         position: relative;
         width: 100vw;
         height: 16vh;
-        background-color: #000000;
+        margin-bottom: 5vh;
     }
     #ccdoc-banner-base{
         height: 100%;
         object-fit: cover;
+    }
+    #watermark-section{
+        top:50%;
     }
     .title-1-container{
         margin-bottom: 5vh;
@@ -499,7 +491,7 @@ button:hover{
         font-size: 1.5em !important;
     }
     .title-2-container{
-        margin-bottom: 1vh;
+        margin-bottom: 5vh;
     }
     .title-2-div{
         margin-left: 10vw;
@@ -508,5 +500,33 @@ button:hover{
     }
     .description-section{
         margin-inline: 10vw;
+        margin-bottom: 5vh;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .gallery{
+        padding-block: 1.5vh;
+    }
+    .ccdoc-idfa-catalog-image.visible{
+        width: 95%;
+    }
+    .button-container{
+        flex-direction: row;
+        width: 100%;
+        gap: 1vw;;
+    }.radio-img{
+        width: 100%;
+    }
+    button{
+        font-size: 3vh;
+    }
+    #prevBtn{
+        left: 3vw;
+    }
+    #nextBtn{
+        right: 3vw;
     }
 }
