@@ -37,7 +37,7 @@ document.getElementById('ccdoc-box').addEventListener('click', function() {
 });
 window.addEventListener('scroll', function() {
     const targetElement = document.getElementById('content-1');
-    const rect = targetElement.getBoundingClientRect();
+    let rect = targetElement.getBoundingClientRect();
     if (rect.bottom < 0) {
         document.getElementById('upButton').classList.add('show');
         // Añadir un evento de clic al triángulo de subir
