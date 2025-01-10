@@ -139,64 +139,6 @@ nav ul li a:hover {
     font-weight: 300;
     font-size: 1.5em;
 }
-#ccdoc-idfa-catalog-section {
-    display: flex;
-    margin-inline: 8vw;
-    gap: 5vw;
-    max-height: 60vh;
-    margin-bottom: 8vh;
-}
-#ccdoc-idfa-catalog-view {
-    position: relative;
-    flex: 6;
-}
-#ccdoc-idfa-catalog-view-base {
-    object-fit: cover;
-    width: 100%;
-    max-height: 100%;
-}
-#ccdoc-idfa-catalog-view-overlay {
-    position: absolute;
-    display: none;
-}
-#ccdoc-idfa-catalog-preview {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    max-height: 100%;
-    gap: 5%;
-}
-#ccdoc-idfa-catalog-preview div {
-    height: 100%;
-}
-#ccdoc-idfa-catalog-preview div img{
-    width: 100%;
-    display: block;
-    max-height: 100%;
-}
-#ccdoc-idfa-catalog-preview-1 {
-    height: 47.5%;
-    width: 100%;
-}
-#ccdoc-idfa-catalog-preview-1 label img{
-    cursor: pointer;
-    display: block;
-}
-#ccdoc-idfa-catalog-preview-1 input[type="radio"]:checked + label img {
-    opacity: 1; /* Hace que la imagen seleccionada sea totalmente opaca */
-    outline: 5px solid #696969; /* Resalta la imagen seleccionada */
-}
-#ccdoc-idfa-catalog-preview-2 {
-    height: 47.5%;
-}
-#ccdoc-idfa-catalog-preview-2 label img{
-    cursor: pointer;
-    box-sizing: border-box;
-}
-#ccdoc-idfa-catalog-preview-2 input[type="radio"]:checked + label img {
-    opacity: 1; /* Hace que la imagen seleccionada sea totalmente opaca */
-    outline: 5px solid #696969; /* Resalta la imagen seleccionada */
-}
 .title-1-container {
     margin-bottom: 8vh;
     display: flex;
@@ -345,7 +287,7 @@ nav ul li a:hover {
     transition: transform 0.3s ease;
 }
 .horizontal-gallery-image.scaled {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .horizontal-gallery-image.clicked {
     transform: scale(1.2);
@@ -401,4 +343,112 @@ nav ul li a:hover {
     top: 50%;
     left: 50%;
     width: 100vw;
+}
+#ccdoc-idfa-catalog-section{
+    display: flex;
+    justify-content: center;
+    width:84vw;
+    margin-inline: 8vw;
+    margin-bottom: 5vh;
+}
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.left-side {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.gallery {
+    display: flex;
+    background-image: url('img/ccdoc-idfa-catalog-view-base.png');
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-block: 3vh;
+    padding-inline: 1vw;
+}
+.ccdoc-idfa-catalog-image {
+    display: none;
+    width: 0;
+    height: auto;
+    opacity: 0;
+    transition: opacity 10s ease;
+}
+.ccdoc-idfa-catalog-image img{
+    max-width: 100%;
+}
+.ccdoc-idfa-catalog-image.visible {
+    display: block;
+    opacity: 1;
+    width: 90%;
+}
+.right-side {
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3vh;
+}
+
+.radio-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-img {
+    width: 90%;
+    height: auto;
+}
+
+.radio-btn.selected .radio-img {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2px solid black;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 6vh;
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    opacity: 30%;
+    transition: opacity 0.3s ease-in-out;
+}
+button:hover{
+    opacity: 100%;
+}
+
+#prevBtn {
+    left: 5vw;
+}
+
+#nextBtn {
+    right: 5vw;
 }

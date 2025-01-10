@@ -217,3 +217,95 @@ function lerp (a, b, n) {
   return (1 - n) * a + n * b;
 }
 init();
+const type1Button = document.getElementById('radioType1');
+const type2Button = document.getElementById('radioType2');
+const gallery = document.getElementById('gallery');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const images = document.querySelectorAll('.ccdoc-idfa-catalog-image');
+let currentIndex = 0;
+let currentType = 'type1';
+
+// Función para mostrar solo las imágenes de un tipo seleccionado
+function filterImages(type) {
+    // Primero ocultamos todas las imágenes
+    images.forEach(img => {
+        img.classList.remove('visible'); // Remover la clase "visible"
+    });
+
+    // Ahora mostramos solo las imágenes del tipo seleccionado
+    const filteredImages = document.querySelectorAll(`.ccdoc-idfa-catalog-image.${type}`);
+    filteredImages.forEach(img => {
+        img.classList.add('visible'); // Agregar la clase "visible" a las imágenes del tipo seleccionado
+    });
+    currentIndex = 0;  // Reset index when switching images
+    showImage(currentIndex);
+}
+
+// Mostrar una sola imagen a la vez
+function showImage(index) {
+    let visibleImages = [];
+    images.forEach((img, i) => {
+        if(img.classList.contains(currentType)){
+            visibleImages.push(img);
+        }
+    });
+    visibleImages.forEach((img, i) => {
+        if (i === index){
+            img.classList.add('visible');
+        }else{
+            img.classList.remove('visible');
+        }
+    });
+}
+
+// Evento para cambiar a Tipo 1
+type1Button.addEventListener('click', () => {
+    currentType = 'type1';
+    type2Button.classList.remove('selected');
+    type1Button.classList.add('selected');
+    filterImages('type1');
+    e.preventDefault();
+});
+
+// Evento para cambiar a Tipo 2
+type2Button.addEventListener('click', () => {
+    currentType = 'type2';
+    type1Button.classList.remove('selected');
+    type2Button.classList.add('selected');
+    filterImages('type2');
+    e.preventDefault();
+});
+
+// Evento para mostrar la imagen anterior
+prevBtn.addEventListener('click', () => {
+    let visibleImages = [];
+    images.forEach((img, index) => {
+        if(img.classList.contains(currentType)){
+            visibleImages.push(img);
+        }
+    });
+    currentIndex = (currentIndex === 0) ? visibleImages.length - 1 : currentIndex - 1;
+    showImage(currentIndex);
+    e.preventDefault();
+});
+
+// Evento para mostrar la imagen siguiente
+nextBtn.addEventListener('click', () => {
+    let visibleImages = [];
+    images.forEach((img, index) => {
+        if(img.classList.contains(currentType)){
+            visibleImages.push(img);
+        }
+    });
+    currentIndex = (currentIndex === visibleImages.length - 1) ? 0 : currentIndex + 1;
+    showImage(currentIndex);
+    e.preventDefault();
+});
+
+// Inicializar con Tipo 1 seleccionado
+window.onload = () => {
+    type1Button.classList.add('selected');
+    type2Button.classList.remove('selected');
+    filterImages('type1');
+};
