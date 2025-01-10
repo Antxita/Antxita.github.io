@@ -74,7 +74,7 @@ nav ul li a:hover {
     margin-block: 10vh;
     margin-inline: 33vw;
 }
-.description {
+#description {
     margin: 0;
 }
 .down-button-container{
@@ -457,4 +457,56 @@ button:hover{
 
 #nextBtn {
     right: 5vw;
+}
+
+@media (max-width: 768px) {
+    #presentation{
+        justify-content: center;
+        text-align: center;
+        margin-block: 10vh;
+        margin-inline: 0;
+        padding-inline: 10vw;
+    }
+    #head4{
+        margin-top: 2vh;
+    }
+    #description{
+        margin-top: 5vh;
+    }
+    #ccdoc-banner-section {
+        position: relative;
+        width: 100vw;
+        height: 16vh;
+        background-color: #000000;
+    }
+    #ccdoc-banner-base{
+        height: 100%;
+        object-fit: cover;
+    }
+    .title-1-container{
+        margin-bottom: 5vh;
+    }
+    .title-1-div{
+        height: 10vh;
+    }
+    .title-1-div img{
+        max-height: 80% !important;
+    }
+    .title-1-div span:first-of-type{
+        font-size: .75em !important;
+    }
+    .title-1-div span:last-of-type{
+        font-size: 1.5em !important;
+    }
+    .title-2-container{
+        margin-bottom: 1vh;
+    }
+    .title-2-div{
+        margin-left: 10vw;
+        margin-right: 5vw;
+        margin-block: 1vh;
+    }
+    .description-section{
+        margin-inline: 10vw;
+    }
 }
