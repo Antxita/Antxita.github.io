@@ -23,8 +23,27 @@ function obtenerBannerCercano() {
     // Retornar el ID del banner más cercano
     return bannerCercano ? bannerCercano.id : null;
 }
+function areBannersVisible() {
+    const banners = document.querySelectorAll('.banner'); // Selecciona todos los elementos con clase "banner"
+
+    for (let banner of banners) {
+        const rect = banner.getBoundingClientRect();
+        
+        // Verifica si el elemento está completamente fuera del viewport
+        if (rect.top >= window.innerHeight || rect.bottom <= 0 || rect.left >= window.innerWidth || rect.right <= 0) {
+        // El banner está fuera del viewport, por lo que no está visible
+        continue; // Este banner no está visible
+        } else {
+        // Si un banner está dentro del viewport, retorna que está visible
+        return true;
+        }
+    }
+
+    // Si no hay banners visibles, retorna false
+    return false;
+}
 document.getElementById('down-button-1').addEventListener('click', function() {
-    var destino = document.getElementById('content-1');
+    var destino = document.getElementById('index');
     destino.scrollIntoView({
         behavior: 'smooth'
     });
@@ -35,15 +54,21 @@ document.getElementById('ccdoc-box').addEventListener('click', function() {
         behavior: 'smooth'
     });
 });
+document.getElementById('miradoc-box').addEventListener('click', function() {
+    var destino = document.getElementById('miradoc');
+    destino.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
 window.addEventListener('scroll', function() {
-    const targetElement = document.getElementById('content-1');
+    const targetElement = document.getElementById('index');
     let rect = targetElement.getBoundingClientRect();
     if (rect.bottom < 0) {
         document.getElementById('upButton').classList.add('show');
         // Añadir un evento de clic al triángulo de subir
         document.getElementById('upButton').addEventListener('click', function() {
             // Obtener el elemento con el id "content-1"
-            const element = document.getElementById("content-1");
+            const element = document.getElementById("index");
 
             // Obtener la posición vertical del elemento en relación con el documento
             const topPosition = element.offsetTop;
@@ -59,11 +84,12 @@ window.addEventListener('scroll', function() {
     var banner = document.getElementById(obtenerBannerCercano());
     var watermarkSection = document.getElementById('watermark-section');
     var watermarkDiv = document.getElementById('watermark-div');
-    if(banner != null){
+    var areBannersVisibleBool = areBannersVisible();
+    if(banner != null && !areBannersVisibleBool){
         if (banner.id = "ccdoc-banner-section"){
             watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 10%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>CORPORACIÓN CHILENA DEL DOCUMENTAL</span>";
         }else if (banner.id = "miradoc-banner-section"){
-            watermarkDiv.innerHTML="MIRADOC ESTRENOS";
+            watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 10%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>MIRADOC</span>";
         }
         watermarkSection.style.opacity = "100%";
     }else{
