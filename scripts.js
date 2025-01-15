@@ -59,6 +59,12 @@ document.getElementById('miradoc-box').addEventListener('click', function() {
         behavior: 'smooth'
     });
 });
+document.getElementById('lakioska-box').addEventListener('click', function() {
+    var destino = document.getElementById('lakioska');
+    destino.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
 window.addEventListener('scroll', function() {
     const targetElement = document.getElementById('index');
     let rect = targetElement.getBoundingClientRect();
@@ -86,9 +92,14 @@ window.addEventListener('scroll', function() {
     var areBannersVisibleBool = areBannersVisible();
     if(banner != null && !areBannersVisibleBool){
         if (banner.id == "ccdoc-banner-section"){
+            watermarkSection.style.top = "67%";
             watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 10%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>CORPORACIÓN CHILENA DEL DOCUMENTAL</span>";
         }else if (banner.id == "miradoc-banner-section"){
+            watermarkSection.style.top = "40%";
             watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 10%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>MIRADOC</span>";
+        }else if (banner.id == "lakioska-banner-section"){
+            watermarkSection.style.top = "40%";
+            watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 10%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>LA KIOSKA</span>";
         }
         watermarkSection.style.opacity = "100%";
     }else{

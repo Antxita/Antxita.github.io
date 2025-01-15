@@ -170,6 +170,7 @@ nav ul li a:hover {
     width: 100vw;
     margin-bottom: 8vh;
     text-align: center;
+    z-index: 2;
 }
 .banner-base {
     display: block;
@@ -388,12 +389,12 @@ button:hover{
 }
 #watermark-section {
     position: fixed; 
-    z-index: 1000; 
+    z-index: 1; 
     right: 2.8vw;
-    top: 75%;
+    top: 40%;
     display: flex;
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 #watermark-div {
     transform: rotate(90deg);
@@ -536,6 +537,15 @@ button:hover{
 }
 .box-inner-logo:hover ~ .box-inner-fade{
     background-color: rgba(0, 0, 0, 0.3);
+}
+#lakioska-banner-overlay{
+    position: absolute;
+    top: 57%;       /* Centrado vertical */
+    left: 50%;      /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Para ajustar el centro exacto */
+    width: 30%;   /* Tamaño de la imagen que va encima */
+    height: auto;
+    z-index: 2;
 }
 @media (max-width: 768px) {
     #upButton{
