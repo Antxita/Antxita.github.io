@@ -47,23 +47,22 @@ nav ul li a:hover {
     font-size: 3.5em;
     margin: 0;
     line-height: 1em;
+    color: #FB7D06;
 }
 #head2 {
     font-weight: 700;
     font-size: 5em;
     margin: 0;
-    color: #FB7D06;
     line-height: 1em;
 }
 #head3{
     font-weight: 700;
     font-size: 4em;
-    margin: 0;
-    color: #FB7D06;
+    margin: 0;  
     line-height: 1em;
 }
 #head4 {
-    font-weight: 200;
+    font-weight: 300;
     font-style: italic;
     margin: 0;
     color: #FB7D06;
