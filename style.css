@@ -203,7 +203,7 @@ nav ul li a:hover {
     font-size: 5em;
     font-weight: 700;
     transform: translate(-50%, -50%);
-    width: 90%;
+    width: 100%;
     z-index: 2;
 }
 .title-1-container {
@@ -564,15 +564,30 @@ button:hover{
     #description{
         margin-top: 5vh;
     }
-    #ccdoc-banner-section {
+    .box-inner-text{
+        font-size: 2em;
+        width: 80%;
+    }
+    .banner-section {
         position: relative;
         width: 100vw;
-        height: 16vh;
+        height: 30vh;
         margin-bottom: 5vh;
     }
-    #ccdoc-banner-base{
+    .banner-base{
         height: 100%;
         object-fit: cover;
+    }
+    .banner-text{
+        font-size: 2.5em;
+    }
+    #miradoc-banner-overlay{
+        height: 60%;
+        width: auto;
+    }
+    #lakioska-banner-overlay{
+        height: 60%;
+        width: auto;
     }
     #watermark-section{
         top:50%;
@@ -599,9 +614,10 @@ button:hover{
         font-size: 2.5em !important;
     }
     .title-4-right{
-        font-size: 2em;
+        font-size: 1.8em;
         margin-top: 0.8vh;
         margin-left: 1vw;
+        margin-right: 1vw;
     }
     .description-section{
         margin-inline: 10vw;
