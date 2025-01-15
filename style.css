@@ -358,6 +358,11 @@ button:hover{
 #nextBtn {
     right: 5vw;
 }
+.content-a{
+    width: 78vw;
+    margin-inline: 11vw;
+    margin-bottom: 5vh;
+}
 #ccdoc-idfa-rrss-1-section {
     display: flex;
     justify-content: space-between;  /* Distribuye las columnas de manera uniforme */
@@ -388,7 +393,7 @@ button:hover{
     top: 75%;
     display: flex;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
 }
 #watermark-div {
     transform: rotate(90deg);
