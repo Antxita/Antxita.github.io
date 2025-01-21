@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -88,44 +89,62 @@
             <p class="description-text">Abarca un total de 17 películas documentales, con ficha técnica y sinopsis, separadas en colores por sus categorías dentro del festival, además de la delegación y line up. Formato digital, para computador y celular.</p>
         </section>
         <section id="ccdoc-idfa-catalog-section">
-            <div class="container">
-                <div class="left-side">
-                    <div class="gallery-container">
-                        <div class="gallery" id="gallery">
-                            <div class="ccdoc-idfa-catalog-image type1">
-                                <img src="img/ccdoc-idfa-catalog-view-desktop-1.png" alt="Imagen 1">
-                            </div>
-                            <div class="ccdoc-idfa-catalog-image type1">
-                                <img src="img/ccdoc-idfa-catalog-view-desktop-2.png" alt="Imagen 2">
-                            </div>
-                            <div class="ccdoc-idfa-catalog-image type1">
-                                <img src="img/ccdoc-idfa-catalog-view-desktop-3.png" alt="Imagen 3">
-                            </div>
-                            <div class="ccdoc-idfa-catalog-image type2">
-                                <img src="img/ccdoc-idfa-catalog-view-mobile-1.png" alt="Imagen 4">
-                            </div>
-                            <div class="ccdoc-idfa-catalog-image type2">
-                                <img src="img/ccdoc-idfa-catalog-view-mobile-2.png" alt="Imagen 5">
-                            </div>
-                            <div class="ccdoc-idfa-catalog-image type2">
-                                <img src="img/ccdoc-idfa-catalog-view-mobile-3.png" alt="Imagen 6">
-                            </div>
-                            <button class="prev" id="prevBtn">&lt;</button>
-                            <button class="next" id="nextBtn">&gt;</button>
+            <div class="ccdoc-idfa-catalog-left">
+                <div id="ccdoc-idfa-catalog-left-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-theme="dark">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#ccdoc-idfa-catalog-left-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#ccdoc-idfa-catalog-left-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#ccdoc-idfa-catalog-left-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>                
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/ccdoc-idfa-catalog-view-desktop-1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/ccdoc-idfa-catalog-view-desktop-2.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/ccdoc-idfa-catalog-view-desktop-3.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="ccdoc-idfa-catalog-left-carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon visually-hidden"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#ccdoc-idfa-catalog-left-carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon visually-hidden"></span>
+                        <span class="visually-hidden"></span>
+                    </button>
                 </div>
-                <div class="right-side">
-                    <div class="button-container">
-                        <div class="radio-btn" id="radioType1">
-                            <img src="img/ccdoc-idfa-catalog-view-desktop-1.png" alt="Tipo 1" class="radio-img">
+            </div>
+            <div class="ccdoc-idfa-catalog-right">
+                <div id="ccdoc-idfa-catalog-right-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-theme="dark">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#ccdoc-idfa-catalog-right-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#ccdoc-idfa-catalog-right-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#ccdoc-idfa-catalog-right-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>                
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/ccdoc-idfa-catalog-view-mobile-1.png" class="d-block w-100" alt="...">
                         </div>
-                        <div class="radio-btn" id="radioType2">
-                            <img src="img/ccdoc-idfa-catalog-view-mobile-1.png" alt="Tipo 2" class="radio-img">
+                        <div class="carousel-item">
+                            <img src="img/ccdoc-idfa-catalog-view-mobile-2.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/ccdoc-idfa-catalog-view-mobile-3.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#ccdoc-idfa-catalog-right-carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon visually-hidden"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#ccdoc-idfa-catalog-right-carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon visually-hidden"></span>
+                        <span class="visually-hidden"></span>
+                    </button>
                 </div>
-            </div>        
+            </div>     
         </section>
         <section class="title-4">
             <div class="title-4-left" style="color: #2098CC !important;">
@@ -354,6 +373,49 @@
         <section class="description-section">
             <p class="description-text">Se diseñó el manual de usuario de la marca, quienes ya contaban con un logotipo y paleta de colores. El diseño del manual incluyó el diseño de papelería básica, elección de tipografías corporativas, paleta de colores.</p>
         </section>
+        <section id="lakioska-manual-1-section"> 
+            <div id="lakioska-manual-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-theme="dark">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#lakioska-manual-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#lakioska-manual-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#lakioska-manual-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#lakioska-manual-carousel" data-bs-slide-to="3" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#lakioska-manual-carousel" data-bs-slide-to="4" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#lakioska-manual-carousel" data-bs-slide-to="5" aria-label="Slide 3"></button>
+                  </div>                
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/lakioska-manual-catalog-view-1.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/lakioska-manual-catalog-view-2.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/lakioska-manual-catalog-view-3.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/lakioska-manual-catalog-view-4.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/lakioska-manual-catalog-view-5.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/lakioska-manual-catalog-view-6.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#lakioska-manual-carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon visually-hidden">&lt;</span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#lakioska-manual-carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon visually-hidden">&gt;</span>
+                    <span class="visually-hidden"></span>
+                </button>
+            </div>
+        </section>
+        <section id="lakioska-manual-2-section" class="content-a">
+            <img src="img/lakioska-manual-1.png" alt="" style="width: 100%;">
+        </section>
         <section class="title-4">
             <div class="title-4-left" style="color: #6C923E !important;">
                 &gt;
@@ -366,8 +428,16 @@
             <img src="img/lakioska-rrss.png" alt="" style="width: 100%;">
         </section>
     </section>
+    <section id="indepe">
+        <section id="indepe-banner-section" class="banner banner-section">
+            <img src="img/indepe-banner.png" alt="indepe-banner" class="banner-base">
+            <span class="banner-text">I. Municipalidad de Independencia</span>
+        </section>
+        
+    </section>
     <footer></footer>
     <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <svg id="upButton" width="54" height="38" viewBox="0 0 54 38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M27 0L0.153213 37.5L53.8468 37.5L27 0Z" fill="black"/>
     </svg>
