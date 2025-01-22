@@ -254,6 +254,7 @@ nav ul li a:hover {
 }
 .description-section {
     margin-inline: 11vw;
+    margin-top: 3vh;
     margin-bottom: 8vh;
     text-align: justify;
 }
@@ -267,7 +268,10 @@ nav ul li a:hover {
     width:78vw;
     margin-inline: 11vw;
     margin-bottom: 5vh;
-    gap: 2vw;;
+    gap: 2vw;
+}
+.carousel-indicators{
+    margin-bottom: 1vh !important;
 }
 #ccdoc-idfa-catalog-left, #ccdoc-idfa-catalog-right {
     max-width: 40%;
@@ -287,6 +291,7 @@ nav ul li a:hover {
     align-items: center;  /* Centra el contenido de las columnas verticalmente */
     margin-inline: 11vw;
     margin-bottom: 5vh;
+    gap: 2vw;
 }
 #ccdoc-idfa-rrss-1-div-1 {
     flex:1; 
@@ -313,6 +318,7 @@ nav ul li a:hover {
     font-size: 1.2em;
 }
 #ccdoc-idfa-rrss-1-div-3 img {
+    margin-top: 3vh;
     display: block; 
     width: 100%;
 }
@@ -336,6 +342,16 @@ nav ul li a:hover {
 #ccdoc-conecta-credentials-section {
     margin-inline: 11vw;
     margin-block: 8vh;
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+}
+#ccdoc-conecta-credentials-section div{
+    width: 24vw;
+    display: flex;
+}
+#ccdoc-conecta-credentials-section div img{
+    width: 100%;
 }
 .subsection-hr{
     text-align: center; 
@@ -548,6 +564,7 @@ nav ul li a:hover {
     }
     .banner-text{
         font-size: 2.5em;
+        width: 90%;
     }
     #miradoc-banner-overlay{
         height: 60%;
@@ -576,24 +593,39 @@ nav ul li a:hover {
         font-size: 1.5em !important;
     }
     .title-4{
-        margin-left:4vw;
+        margin-left:5.1vw;
+        margin-block:2vh;
     }
     .title-4-left{
         font-size: 2.5em !important;
     }
     .title-4-right{
         font-size: 1.8em;
-        margin-top: 0.8vh;
-        margin-left: 1vw;
-        margin-right: 1vw;
+        margin-top: 1vh;
     }
     .description-section{
         margin-inline: 10vw;
-        margin-bottom: 5vh;
+        margin-top: 0;
+        margin-bottom: 4vh;
+    }
+    .description-text {
+        margin-block: 0;
+        padding-block: 0;
     }
     #ccdoc-idfa-catalog-section{
         flex-direction: column;
         gap: 3vh;
+        width: 80vw;
+        margin-inline: 10vw;
+        margin-bottom: 0;
+    }
+    .carousel-indicators{
+        margin-bottom: 0 !important;
+    }
+    .content-a{
+        width: 80vw;
+        margin-inline: 10vw;
+        margin-block: 3vh;
     }
     #ccdoc-idfa-rrss-1-section{
         flex-direction: column;
@@ -612,11 +644,22 @@ nav ul li a:hover {
         width: 100%;
     }
     #ccdoc-idfa-rrss-2-section{
+        width: 80vw;
+        margin-inline: 10vw;
         gap: 3vh;
     }
     #ccdoc-idfa-rrss-2-div-2{
         flex-direction: column;
         gap: 3vh;
     }
-
+    #ccdoc-conecta-credentials-section{
+        margin-block: 3vh;
+        margin-inline: 10vw;
+        flex-direction: column;
+        gap: 3vh;
+    }
+    #ccdoc-conecta-credentials-section div{
+        width: 80vw;
+        display: flex;
+    }
 }
