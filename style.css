@@ -282,10 +282,39 @@ nav ul li a:hover {
 }
 #ccdoc-idfa-rrss-1-section {
     display: flex;
-    justify-content: space-between;  /* Distribuye las columnas de manera uniforme */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;  /* Centra el contenido de las columnas verticalmente */
     margin-inline: 11vw;
     margin-bottom: 5vh;
+}
+#ccdoc-idfa-rrss-1-div-1 {
+    flex:1; 
+    align-items: center;
+    text-align: right; 
+    justify-content: right;
+}
+#ccdoc-idfa-rrss-1-div-1 span{
+    font-weight: 500; 
+    font-size: 1.2em;
+}
+#ccdoc-idfa-rrss-1-div-2 {
+    flex:6;
+}
+#ccdoc-idfa-rrss-1-div-2 img{
+    display: block; 
+    width: 100%;
+}
+#ccdoc-idfa-rrss-1-div-3 {
+    flex: 2;
+}
+#ccdoc-idfa-rrss-1-div-3 span {
+    font-weight: 500; 
+    font-size: 1.2em;
+}
+#ccdoc-idfa-rrss-1-div-3 img {
+    display: block; 
+    width: 100%;
 }
 #ccdoc-idfa-rrss-2-section {
     display: flex;
@@ -293,6 +322,11 @@ nav ul li a:hover {
     gap: 5vh;
     margin-inline: 11vw;
     margin-bottom: 8vh;
+}
+#ccdoc-idfa-rrss-2-div-2 {
+    display: flex;
+    gap: 2vw;
+    flex-direction: row;
 }
 #ccdoc-conecta-rrss-section {
     align-items: center;
@@ -302,6 +336,13 @@ nav ul li a:hover {
 #ccdoc-conecta-credentials-section {
     margin-inline: 11vw;
     margin-block: 8vh;
+}
+.subsection-hr{
+    text-align: center; 
+    opacity: 10%; 
+    margin-inline: 11vw; 
+    width: 78vw;
+    margin-bottom: 5vh;
 }
 #watermark-section {
     position: fixed; 
@@ -550,31 +591,32 @@ nav ul li a:hover {
         margin-inline: 10vw;
         margin-bottom: 5vh;
     }
-    .container{
-        display: flex;
+    #ccdoc-idfa-catalog-section{
         flex-direction: column;
-        gap: 2vh;
+        gap: 3vh;
     }
-    .gallery{
-        padding-block: 1.5vh;
+    #ccdoc-idfa-rrss-1-section{
+        flex-direction: column;
+        text-align: left;
+        justify-content: left;
+        margin-inline: 10vw;
+        gap: 3vh;
     }
-    .ccdoc-idfa-catalog-image.visible{
-        width: 95%;
-    }
-    .button-container{
-        flex-direction: row;
-        width: 100%;
-        gap: 1vw;;
-    }.radio-img{
+    #ccdoc-idfa-rrss-1-div-1{
+        text-align: left;
         width: 100%;
     }
-    button{
-        font-size: 3vh;
+    #ccdoc-idfa-rrss-1-div-3 img{
+        margin-top: 3vh;
+        display: flex; 
+        width: 100%;
     }
-    #prevBtn{
-        left: 3vw;
+    #ccdoc-idfa-rrss-2-section{
+        gap: 3vh;
     }
-    #nextBtn{
-        right: 3vw;
+    #ccdoc-idfa-rrss-2-div-2{
+        flex-direction: column;
+        gap: 3vh;
     }
+
 }
