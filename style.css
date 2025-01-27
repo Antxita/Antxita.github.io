@@ -273,8 +273,8 @@ nav ul li a:hover {
 .carousel-indicators{
     margin-bottom: 1vh !important;
 }
-#ccdoc-idfa-catalog-left, #ccdoc-idfa-catalog-right {
-    max-width: 40%;
+#ccdoc-idfa-catalog-left-carousel, #ccdoc-idfa-catalog-right-carousel {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 .carousel-item {
     display: flex !important;
@@ -346,33 +346,15 @@ nav ul li a:hover {
     flex-direction: row;
     gap: 3vw;
 }
-#ccdoc-conecta-credentials-section div{
+#ccdoc-conecta-credentials-section div {
     width: 24vw;
     display: flex;
 }
-#ccdoc-conecta-credentials-section div img{
+#ccdoc-conecta-credentials-section div img {
     width: 100%;
 }
-.subsection-hr{
-    text-align: center; 
-    opacity: 10%; 
-    margin-inline: 11vw; 
-    width: 78vw;
+#ccdoc-conecta-diplomas-catalog-section{
     margin-bottom: 5vh;
-}
-#watermark-section {
-    position: fixed; 
-    z-index: 1; 
-    right: 2.8vw;
-    top: 40%;
-    display: flex;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-#watermark-div {
-    transform: rotate(90deg);
-    transform-origin: top right;
-    white-space: nowrap; 
 }
 .preview-container {
     display: flex; /* Usamos Flexbox para que los elementos estén alineados en una fila */
@@ -395,12 +377,10 @@ nav ul li a:hover {
     gap: 1.5vh; /* Aplica el margen a los lados de la galería */
     width: 21.61%; /* La galería ocupará el 40% del ancho */
 }
-
 /* Estilo para los items de la galería */
 .vertical-gallery-item {
     width: 100%; /* Las imágenes ocuparán todo el ancho disponible */
 }
-
 /* Estilos de las imágenes */
 .vertical-gallery-image {
     width: 100%;
@@ -422,11 +402,9 @@ nav ul li a:hover {
     justify-content: center;
     margin-bottom: 5vh;
 }
-
 .horizontal-gallery-item {
     width: 33%;
 }
-
 .horizontal-gallery-image {
     width: 100%;
     height: auto;
@@ -439,33 +417,55 @@ nav ul li a:hover {
 .horizontal-gallery-image.clicked {
     transform: scale(1.2);
 }
-.highlight {
-    transform: scale(1.05);
+#ccdoc-conecta-pantallas-section {
+    display: flex;
+    flex-direction: column;
+    margin-inline: 11vw;
+    margin-block: 8vh;
 }
-#ccdoc-conecta-diplomas-catalog-section{
+#ccdoc-conecta-pantallas-div-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
     margin-bottom: 5vh;
+}
+#ccdoc-conecta-pantallas-div-1 div {
+    width: 24vw;
+}
+#ccdoc-conecta-pantallas-div-1 div img{
+    width: 100%
+}
+#ccdoc-conecta-pantallas-div-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    margin-bottom: 5vh;
+}
+#ccdoc-conecta-pantallas-div-2 div {
+    width: 23vw;
+}
+#ccdoc-conecta-pantallas-div-2 div img{
+    width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 .legend{
     text-align: center;
     font-weight: 200;
     font-size: large;
 }
-#ccdoc-conecta-pantallas-section{
-    margin-inline: 11vw;
-    width: 78vw;
-    margin-bottom: 5vh;
-}
-#ccdoc-conecta-pantallas-section img {
-    width: 100%;
-}
 #ccdoc-conecta-programa-section{
     display: flex;
     margin-bottom: 5vh;
     justify-content: center;
+    width: 60vw;
+    margin-inline: 20vw;
+}
+.highlight {
+    transform: scale(1.05);
 }
 .magnifying-glass {
     display: flex;
-    width: 50vw;
+    width: 100%;
     background: black;
 }
 .magnifying-glass__img {
@@ -490,6 +490,27 @@ nav ul li a:hover {
     top: 50%;
     left: 50%;
     width: 100vw;
+}
+.subsection-hr{
+    text-align: center; 
+    opacity: 10%; 
+    margin-inline: 11vw; 
+    width: 78vw;
+    margin-bottom: 5vh;
+}
+#watermark-section {
+    position: fixed; 
+    z-index: 1; 
+    right: 2.8vw;
+    top: 40%;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+#watermark-div {
+    transform: rotate(90deg);
+    transform-origin: top right;
+    white-space: nowrap; 
 }
 #miradoc-banner-overlay{
     position: absolute;
@@ -609,7 +630,7 @@ nav ul li a:hover {
         margin-bottom: 4vh;
     }
     .description-text {
-        margin-block: 0;
+        margin-top: 0;
         padding-block: 0;
     }
     #ccdoc-idfa-catalog-section{
@@ -652,6 +673,19 @@ nav ul li a:hover {
         flex-direction: column;
         gap: 3vh;
     }
+    #ccdoc-conecta-rrss-section {
+        align-items: center;
+        margin-inline: 10vw;
+        margin-block: 3vh;
+    }
+    #ccdoc-conecta-rrss-section div span {
+        font-weight: 500; 
+        font-size: 1.2em;
+    }
+    #ccdoc-conecta-rrss-section div img {
+        width: 100%;
+        margin-top: 3vh;
+    }
     #ccdoc-conecta-credentials-section{
         margin-block: 3vh;
         margin-inline: 10vw;
@@ -661,5 +695,36 @@ nav ul li a:hover {
     #ccdoc-conecta-credentials-section div{
         width: 80vw;
         display: flex;
+    }
+    #ccdoc-conecta-pantallas-section {
+        display: flex;
+        flex-direction: column;
+        margin-inline: 10vw;
+        margin-block: 3vh;
+    }
+    #ccdoc-conecta-pantallas-div-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+    }
+    #ccdoc-conecta-pantallas-div-1 div {
+        width: 80vw;
+    }
+    #ccdoc-conecta-pantallas-div-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+        margin-bottom: 3vh;
+    }
+    #ccdoc-conecta-pantallas-div-2 div {
+        width: 80vw;
+    }
+    #ccdoc-conecta-pantallas-div-2 div img{
+        width: 100%;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+    #ccdoc-conecta-programa-section{
+        width: 80vw;
+        margin-inline: 10vw;
     }
 }

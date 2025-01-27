@@ -198,3 +198,18 @@ function lerp (a, b, n) {
   return (1 - n) * a + n * b;
 }
 init();
+function actualizarContenido()  {
+  var width = window.innerWidth;
+  var section = document.getElementById('ccdoc-conecta-rrss-section');
+
+  if (width < 769) {
+    section.innerHTML = '<div><span>Posts tipo carrusel<br>para Instagram</span></div><div><img src="img/ccdoc-conecta-rrss-carrusels-mobile-1.png"><img src="img/ccdoc-conecta-rrss-carrusels-mobile-2.png"></div>';
+  } else {
+    section.innerHTML = '<img src="img/ccdoc-conecta-rrss-carrusels.png" alt="" style="display: block; width: 100%;">';
+  }
+}
+// Ejecutar al cargar la página
+window.addEventListener('DOMContentLoaded', actualizarContenido);
+
+// Ejecutar al redimensionar la ventana
+window.addEventListener('resize', actualizarContenido);
