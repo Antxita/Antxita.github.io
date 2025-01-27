@@ -42,6 +42,21 @@ nav ul li a:hover {
     height: 50px;
     border-radius: 50%;
 }
+#presentation-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+}
+#presentation {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    align-items: center;
+}
+#presentation-logo-div {
+    width: 25%;
+}
 #head1 {
     font-weight: 100;
     font-size: 3.5em;
@@ -62,16 +77,12 @@ nav ul li a:hover {
     line-height: 1em;
 }
 #head4 {
+    font-size: 1.5em;
     font-weight: 300;
     font-style: italic;
-    margin: 0;
-    color: #FB7D06;
-    line-height: 2em;
-    letter-spacing: 0.03em;
-}
-#presentation {
-    margin-block: 10vh;
-    margin-inline: 33vw;
+    margin-top: .5em;
+    color: #9D9D9D;
+    letter-spacing: .1em;
 }
 #description {
     margin: 0;
@@ -542,14 +553,15 @@ nav ul li a:hover {
     z-index: 2;
 }
 #lakioska-manual-1-section {
-    width: 100vw; 
+    width: 78vw;
+    margin-inline: 11vw; 
     display: flex; 
     justify-content: center;
     margin-bottom: 5vh;
 }
 #lakioska-manual-carousel {
     display: flex;
-    width: 65%;
+    width: 100%;
 }
 @media (max-width: 768px) {
     #upButton{

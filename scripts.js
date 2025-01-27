@@ -108,25 +108,78 @@ window.addEventListener('scroll', function() {
 });
 // Función que se ejecutará cuando el elemento esté en la mitad de la vista
 function handleIntersect(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Verificamos que el elemento esté al menos a la mitad visible
-        const section = entry.target;
-  
-        // Seleccionamos las imágenes
-        const images = section.querySelectorAll('img.vertical-gallery-image, img.horizontal-gallery-image');
-  
-        // Aplicamos la clase 'scaled' a cada imagen para el efecto de escalado
-        images.forEach(img => {
-          img.classList.add('scaled');
-          // Después de 0.5 segundos, eliminamos el efecto de escalado
-          setTimeout(() => {
-            img.classList.remove('scaled');
-          }, 500);
-        });
-      }
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Verificamos que el elemento esté al menos a la mitad visible
+      const section = entry.target;
+
+      // Seleccionamos las imágenes
+      const images = section.querySelectorAll('img.vertical-gallery-image, img.horizontal-gallery-image');
+
+      // Aplicamos la clase 'scaled' a cada imagen para el efecto de escalado
+      images.forEach(img => {
+        img.classList.add('scaled');
+        // Después de 0.5 segundos, eliminamos el efecto de escalado
+        setTimeout(() => {
+          img.classList.remove('scaled');
+        }, 500);
+      });
+    }
+  });
+}
+// Obtener todos los elementos de imagen de la galería
+const horizontalImages = document.querySelectorAll('.horizontal-gallery-image');
+const verticalImages = document.querySelectorAll('.vertical-gallery-image');
+// Añadir un evento click a cada imagen de la galería
+horizontalImages.forEach(image => {
+    image.addEventListener('click', function(event) {
+        // Prevenir la propagación del evento hacia el documento (evita que se deseleccione inmediatamente)
+        event.stopPropagation();
+        // Si la imagen ya tiene la clase 'clicked', se deselecciona (se elimina la clase)
+        if (this.classList.contains('clicked')) {
+            this.classList.remove('clicked');
+        } else {
+            // Si no tiene la clase 'clicked', se elimina de todas las imágenes y se agrega a la clicada
+            horizontalImages.forEach(img => {
+                img.classList.remove('clicked');
+            });
+            verticalImages.forEach(img => {
+                img.classList.remove('clicked');
+            });
+            this.classList.add('clicked');
+        }
     });
-  }
+});
+// Añadir un evento click a cada imagen de la galería
+verticalImages.forEach(image => {
+    image.addEventListener('click', function(event) {
+        // Prevenir la propagación del evento hacia el documento (evita que se deseleccione inmediatamente)
+        event.stopPropagation();
+        // Si la imagen ya tiene la clase 'clicked', se deselecciona (se elimina la clase)
+        if (this.classList.contains('clicked')) {
+            this.classList.remove('clicked');
+        } else {
+            // Si no tiene la clase 'clicked', se elimina de todas las imágenes y se agrega a la clicada
+            horizontalImages.forEach(img => {
+                img.classList.remove('clicked');
+            });
+            verticalImages.forEach(img => {
+                img.classList.remove('clicked');
+            });
+            this.classList.add('clicked');
+        }
+    });
+});
+// Añadir un evento click al documento para deseleccionar cualquier imagen si se hace clic fuera de la galería
+document.addEventListener('click', function() {
+    // Eliminar la clase 'clicked' de todas las imágenes cuando se hace clic fuera de la galería
+    horizontalImages.forEach(img => {
+        img.classList.remove('clicked');
+    });
+    verticalImages.forEach(img => {
+        img.classList.remove('clicked');
+    });
+});
   
   // Crear el IntersectionObserver
   const observer = new IntersectionObserver(handleIntersect, {
