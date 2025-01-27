@@ -100,6 +100,9 @@ window.addEventListener('scroll', function() {
         }else if (banner.id == "lakioska-banner-section"){
             watermarkSection.style.top = "40%";
             watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 10%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>LA KIOSKA</span>";
+        }else if (banner.id == "indepe-banner-section"){
+            watermarkSection.style.top = "67%";
+            watermarkDiv.innerHTML="<hr style='display: inline-block; width: 20vh; margin-bottom: .2em;margin-right: 3vh; opacity: 10%;'><span id='watermark-text' style='font-weight: 300; font-size: small;'>MEDIOAMBIENTE INDEPENDENCIA</span>";
         }
         watermarkSection.style.opacity = "100%";
     }else{
