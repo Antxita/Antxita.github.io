@@ -573,6 +573,9 @@ nav ul li a:hover {
     display: flex;
     width: 100%;
 }
+#indepe {
+    margin-bottom: 20vh;
+}
 footer {
     display: flex;
     justify-content: center;
@@ -595,6 +598,8 @@ footer {
     margin-top: 10vh;
     display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin-bottom: 0;
 }
@@ -620,7 +625,7 @@ footer {
     height: 2.5vw;
 }
 .contact-icon {
-    width: 2.5vw;
+    height: 2.5vw;
 }
 #about-me {
     margin-bottom: 20vh;
@@ -648,6 +653,41 @@ footer {
 }
 #about-me-goodbye img {
     width: 20vw;
+}
+#contact-title-container {
+    display: flex;
+    margin-left: 37vw;
+    margin-top: 20vh;
+}
+#contact-title p:nth-of-type(1){
+    font-size: 2.5em;
+    font-weight: 300;
+    margin:0
+}
+#contact-title p:nth-of-type(2){
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 0;
+}
+#presentation-contact-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+#presentation-contact-div p{
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+#presentation-contact-div p .contact-icon{
+    height: 2.2vw !important;
+    margin-right: 1vw;
+}
+#presentation-contact-div p a{
+    color: #000000;
+    text-decoration: none;
+}
+#presentation-contact-div p a:hover{
+    text-decoration-line: underline;
 }
 @media (max-width: 768px) {
     #upButton{
