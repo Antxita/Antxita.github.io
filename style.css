@@ -690,16 +690,25 @@ footer {
     text-decoration-line: underline;
 }
 @media (max-width: 768px) {
+    header{
+        padding: 10px 30px;
+    }
     #upButton{
         width: 5vw;
         right: 3vw;
     }
+    #presentation-container{
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+    }
     #presentation{
-        justify-content: center;
+        flex-direction: column;
+    }
+    #presentation-logo-div{
+        width: 50%;
+    }
+    #presentation-titles-div{
         text-align: center;
-        margin-block: 10vh;
-        margin-inline: 0;
-        padding-inline: 10vw;
     }
     #head4{
         margin-top: 2vh;
@@ -864,5 +873,34 @@ footer {
     #ccdoc-conecta-programa-section{
         width: 80vw;
         margin-inline: 10vw;
+    }
+    #footer-right {
+        display: flex;
+        gap: 3vw;
+        justify-content: end;
+        text-align: right;
+    }
+    .contact-icon {
+        height: 4vw;
+    }
+    #about-me{
+        margin-bottom: 10vh;
+    }
+    #about-me-goodbye img{
+        width: 35vw;
+    }
+    #contact-title-container{
+        display: block;
+        margin-top: 15vh;
+        margin-left: 0;
+        text-align: center;
+    }
+    #presentation-contact-div{
+        text-align: center;
+        gap: 2vh;
+    }
+    #presentation-contact-div p .contact-icon{
+        height: 4vw !important;
+        margin-right: 1.5vw;
     }
 }
