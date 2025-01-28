@@ -65,6 +65,12 @@ document.getElementById('lakioska-box').addEventListener('click', function() {
         behavior: 'smooth'
     });
 });
+document.getElementById('indepe-box').addEventListener('click', function() {
+    var destino = document.getElementById('indepe');
+    destino.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
 window.addEventListener('scroll', function() {
     const targetElement = document.getElementById('index');
     let rect = targetElement.getBoundingClientRect();

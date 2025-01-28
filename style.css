@@ -17,13 +17,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 50px;
+    padding: 10px 100px;
 }
 nav ul {
     list-style-type: none;
     display: flex;
     gap: 50px;
-    font-weight: lighter;
+    font-weight: 300;
+    margin-bottom: 0 !important;
 }
 nav ul li a {
     text-decoration: none;
@@ -82,6 +83,14 @@ nav ul li a:hover {
     font-style: italic;
     margin-top: .5em;
     color: #9D9D9D;
+    letter-spacing: .1em;
+}
+#head5 {
+    font-size: 1.5em;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: .5em;
+    color: #FB7D06;
     letter-spacing: .1em;
 }
 #description {
@@ -580,13 +589,17 @@ footer {
     padding-block: 5vh;
 }
 #footer-left {
-    justify-content: start;
     text-align: left;
 }
 #footer-center {
+    margin-top: 10vh;
     display: flex;
-    align-items: end;
     text-align: center;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+#footer-center span:nth-of-type(2){
+    font-weight: 200;
 }
 #footer-center span a{
     color: #FFFFFF;
@@ -608,6 +621,33 @@ footer {
 }
 .contact-icon {
     width: 2.5vw;
+}
+#about-me {
+    margin-bottom: 20vh;
+}
+#about-me a{
+    font-size: 1.5em;
+    color: #FB7D06;
+    text-decoration: none;
+}
+#about-me a:hover{
+    color: #FB7D06;
+    text-decoration-line: underline;
+}
+#about-me-goodbye {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    flex-direction: column;
+    gap: 5vh;
+}
+#about-me-goodbye p {
+    font-size: 2em;
+}
+#about-me-goodbye img {
+    width: 20vw;
 }
 @media (max-width: 768px) {
     #upButton{
