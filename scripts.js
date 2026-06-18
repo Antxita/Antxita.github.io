@@ -50,10 +50,6 @@ function scrollIntoViewById(triggerId, targetId) {
     }
 }
 scrollIntoViewById('down-button-1', 'index');
-scrollIntoViewById('ccdoc-box', 'ccdoc');
-scrollIntoViewById('miradoc-box', 'miradoc');
-scrollIntoViewById('lakioska-box', 'lakioska');
-scrollIntoViewById('indepe-box', 'indepe');
 window.addEventListener('DOMContentLoaded', function() {
     const upButton = document.getElementById('upButton');
     if (upButton) {
