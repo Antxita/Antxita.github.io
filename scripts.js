@@ -59,7 +59,9 @@ window.addEventListener('DOMContentLoaded', function() {
     if (upButton) {
         upButton.addEventListener('click', function() {
             const element = document.getElementById("index");
-            const topPosition = element.offsetTop;
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            const topPosition = element.offsetTop - headerHeight;
             window.scrollTo({ top: topPosition, behavior: 'smooth' });
         });
     }
