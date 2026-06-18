@@ -71,22 +71,21 @@ document.getElementById('indepe-box').addEventListener('click', function() {
         behavior: 'smooth'
     });
 });
+window.addEventListener('DOMContentLoaded', function() {
+    const upButton = document.getElementById('upButton');
+    if (upButton) {
+        upButton.addEventListener('click', function() {
+            const element = document.getElementById("index");
+            const topPosition = element.offsetTop;
+            window.scrollTo({ top: topPosition, behavior: 'smooth' });
+        });
+    }
+});
 window.addEventListener('scroll', function() {
     const targetElement = document.getElementById('index');
     let rect = targetElement.getBoundingClientRect();
     if (rect.bottom < 0) {
         document.getElementById('upButton').classList.add('show');
-        // Añadir un evento de clic al triángulo de subir
-        document.getElementById('upButton').addEventListener('click', function() {
-            // Obtener el elemento con el id "content-1"
-            const element = document.getElementById("index");
-
-            // Obtener la posición vertical del elemento en relación con el documento
-            const topPosition = element.offsetTop;
-
-            // Realizar el desplazamiento suave hasta el elemento
-            window.scrollTo({ top: topPosition, behavior: 'smooth' });
-        });
     } else {
         document.getElementById('upButton').classList.remove('show');
     }
