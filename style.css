@@ -225,6 +225,46 @@ nav ul li a.active::after {
 .box:hover .box-arrow {
     transform: translateX(4px);
 }
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background-color: #FB7D06;
+    padding-block: 2.5vh;
+}
+.marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: marquee-scroll 24s linear infinite;
+}
+.marquee-item {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    padding-inline: 1vw;
+}
+.marquee-sep {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.4);
+    padding-inline: 1vw;
+}
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
 #upButton {
     position: fixed;
     bottom: 20px;
@@ -830,6 +870,15 @@ footer {
     }
     #index, #ccdoc, #miradoc, #lakioska, #indepe {
         scroll-margin-top: 78px;
+    }
+    #index {
+        height: 70vh;
+    }
+    .marquee {
+        padding-block: 2vh;
+    }
+    .marquee-item, .marquee-sep {
+        font-size: 1.1em;
     }
     header{
         padding: 12px 30px;
