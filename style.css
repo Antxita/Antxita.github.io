@@ -673,42 +673,34 @@ nav ul li a.active::after {
 }
 footer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: #465953;
-    height: 25vh;
 }
 #footer-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
     width: 85vw;
-    height: 100%;
     font-weight: 400;
     color: #FFFFFF;
-    padding-block: 5vh;
+    padding-block: 6vh 4vh;
 }
 #footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vh;
     text-align: left;
 }
-#footer-center {
-    margin-top: 10vh;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 0;
+.footer-brand {
+    font-size: 1.3em;
+    font-weight: 700;
 }
-#footer-center span:nth-of-type(2){
-    font-weight: 200;
-}
-#footer-center span a{
-    color: #FFFFFF;
-    text-decoration: none;
-}
-#footer-center span a:hover{
-    color: #FFFFFF;
-    text-decoration-line: underline;
+.footer-location {
+    font-size: 0.95em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
 }
 #footer-right {
     display: flex;
@@ -719,9 +711,37 @@ footer {
 #footer-right a{
     width: 2.5vw;
     height: 2.5vw;
+    transition: transform 0.2s ease;
+}
+#footer-right a:hover {
+    transform: translateY(-4px);
 }
 .contact-icon {
     height: 2.5vw;
+    transition: filter 0.2s ease;
+}
+#footer-right a:hover .contact-icon {
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+}
+#footer-bottom {
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-block: 2.5vh;
+    font-size: 0.8em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+}
+#footer-bottom a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 400;
+}
+#footer-bottom a:hover {
+    color: #FFFFFF;
+    text-decoration-line: underline;
 }
 #about-me {
     margin-bottom: 20vh;
@@ -976,14 +996,37 @@ footer {
         width: 80vw;
         margin-inline: 10vw;
     }
+    #footer-content {
+        width: 80vw;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3vh;
+        padding-block: 5vh 3vh;
+    }
+    #footer-left {
+        align-items: center;
+        text-align: center;
+    }
     #footer-right {
         display: flex;
-        gap: 3vw;
-        justify-content: end;
+        gap: 4vw;
+        justify-content: center;
         text-align: right;
+    }
+    #footer-right a {
+        width: 4vw;
+        height: 4vw;
     }
     .contact-icon {
         height: 4vw;
+    }
+    #footer-bottom {
+        width: 80vw;
+        flex-direction: column;
+        gap: 1vh;
+        text-align: center;
+        padding-block: 2.5vh;
     }
     #about-me{
         margin-bottom: 10vh;
