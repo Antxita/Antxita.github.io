@@ -228,7 +228,7 @@ nav ul li a.active::after {
 .marquee {
     width: 100%;
     overflow: hidden;
-    background-color: #FB7D06;
+    background-color: #FFFFFF;
     padding-block: 2.5vh;
 }
 .marquee-track {
