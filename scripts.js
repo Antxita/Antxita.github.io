@@ -41,36 +41,19 @@ function areBannersVisible() {
     // Si no hay banners visibles, retorna false
     return false;
 }
-document.getElementById('down-button-1').addEventListener('click', function() {
-    var destino = document.getElementById('index');
-    destino.scrollIntoView({
-        behavior: 'smooth'
-    });
-});
-document.getElementById('ccdoc-box').addEventListener('click', function() {
-    var destino = document.getElementById('ccdoc');
-    destino.scrollIntoView({
-        behavior: 'smooth'
-    });
-});
-document.getElementById('miradoc-box').addEventListener('click', function() {
-    var destino = document.getElementById('miradoc');
-    destino.scrollIntoView({
-        behavior: 'smooth'
-    });
-});
-document.getElementById('lakioska-box').addEventListener('click', function() {
-    var destino = document.getElementById('lakioska');
-    destino.scrollIntoView({
-        behavior: 'smooth'
-    });
-});
-document.getElementById('indepe-box').addEventListener('click', function() {
-    var destino = document.getElementById('indepe');
-    destino.scrollIntoView({
-        behavior: 'smooth'
-    });
-});
+function scrollIntoViewById(triggerId, targetId) {
+    const trigger = document.getElementById(triggerId);
+    if (trigger) {
+        trigger.addEventListener('click', function() {
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+}
+scrollIntoViewById('down-button-1', 'index');
+scrollIntoViewById('ccdoc-box', 'ccdoc');
+scrollIntoViewById('miradoc-box', 'miradoc');
+scrollIntoViewById('lakioska-box', 'lakioska');
+scrollIntoViewById('indepe-box', 'indepe');
 window.addEventListener('DOMContentLoaded', function() {
     const upButton = document.getElementById('upButton');
     if (upButton) {
@@ -81,16 +64,21 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-window.addEventListener('scroll', function() {
-    const targetElement = document.getElementById('index');
-    let rect = targetElement.getBoundingClientRect();
-    if (rect.bottom < 0) {
-        document.getElementById('upButton').classList.add('show');
-    } else {
-        document.getElementById('upButton').classList.remove('show');
-    }
-});
-window.addEventListener('scroll', function() {
+const indexSection = document.getElementById('index');
+if (indexSection) {
+    window.addEventListener('scroll', function() {
+        const upButton = document.getElementById('upButton');
+        let rect = indexSection.getBoundingClientRect();
+        if (rect.bottom < 0) {
+            upButton.classList.add('show');
+        } else {
+            upButton.classList.remove('show');
+        }
+    });
+}
+const watermarkSectionEl = document.getElementById('watermark-section');
+if (watermarkSectionEl) {
+    window.addEventListener('scroll', function() {
     var banner = document.getElementById(obtenerBannerCercano());
     var watermarkSection = document.getElementById('watermark-section');
     var watermarkDiv = document.getElementById('watermark-div');
@@ -113,7 +101,8 @@ window.addEventListener('scroll', function() {
     }else{
         watermarkSection.style.opacity = "0%";
     }
-});
+    });
+}
 // Función que se ejecutará cuando el elemento esté en la mitad de la vista
 function handleIntersect(entries, observer) {
   entries.forEach(entry => {
@@ -198,7 +187,9 @@ document.addEventListener('click', function() {
   
   // Observar la sección
   const section = document.querySelector('#ccdoc-conecta-diplomas-catalog-section');
-  observer.observe(section);
+  if (section) {
+    observer.observe(section);
+  }
 
 const deviceHasPointer = window.matchMedia('(pointer: fine)').matches;
 const container = document.querySelector('.magnifying-glass');
@@ -214,7 +205,7 @@ let aboveImage = false;
 let runMovement = false;
     
 function init () {
-  if (deviceHasPointer) {
+  if (deviceHasPointer && container) {
     containerRect = container.getBoundingClientRect();
 
     window.addEventListener('mousemove', this.getMousePos);
@@ -262,6 +253,9 @@ init();
 function actualizarContenido()  {
   var width = window.innerWidth;
   var section = document.getElementById('ccdoc-conecta-rrss-section');
+  if (!section) {
+    return;
+  }
 
   if (width < 769) {
     section.innerHTML = '<div><span>Posts tipo carrusel<br>para Instagram</span></div><div><img src="img/ccdoc-conecta-rrss-carrusels-mobile-1.png"><img src="img/ccdoc-conecta-rrss-carrusels-mobile-2.png"></div>';
@@ -274,3 +268,48 @@ window.addEventListener('DOMContentLoaded', actualizarContenido);
 
 // Ejecutar al redimensionar la ventana
 window.addEventListener('resize', actualizarContenido);
+
+function initCarousels() {
+    document.querySelectorAll('.simple-carousel').forEach(carousel => {
+        const items = carousel.querySelectorAll('.simple-carousel-item');
+        const indicators = carousel.querySelectorAll('.simple-carousel-indicators button');
+        const prevBtn = carousel.querySelector('.simple-carousel-control.prev');
+        const nextBtn = carousel.querySelector('.simple-carousel-control.next');
+        let current = 0;
+        let timer = null;
+
+        function goTo(index) {
+            items[current].classList.remove('active');
+            indicators[current].classList.remove('active');
+            current = (index + items.length) % items.length;
+            items[current].classList.add('active');
+            indicators[current].classList.add('active');
+        }
+        function next() {
+            goTo(current + 1);
+        }
+        function prev() {
+            goTo(current - 1);
+        }
+        function startAutoplay() {
+            timer = setInterval(next, 5000);
+        }
+        function stopAutoplay() {
+            clearInterval(timer);
+        }
+
+        nextBtn.addEventListener('click', () => { next(); stopAutoplay(); startAutoplay(); });
+        prevBtn.addEventListener('click', () => { prev(); stopAutoplay(); startAutoplay(); });
+        indicators.forEach((btn, i) => btn.addEventListener('click', () => { goTo(i); stopAutoplay(); startAutoplay(); }));
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+
+        startAutoplay();
+    });
+}
+window.addEventListener('DOMContentLoaded', initCarousels);
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.footer-year').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
+});
