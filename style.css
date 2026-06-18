@@ -1,10 +1,5 @@
 html, body {
     overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-    display: none;
 }
 body {
     overflow-y: auto;
