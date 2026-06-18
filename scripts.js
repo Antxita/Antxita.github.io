@@ -258,9 +258,9 @@ function actualizarContenido()  {
   }
 
   if (width < 769) {
-    section.innerHTML = '<div><span>Posts tipo carrusel<br>para Instagram</span></div><div><img src="img/ccdoc-conecta-rrss-carrusels-mobile-1.png"><img src="img/ccdoc-conecta-rrss-carrusels-mobile-2.png"></div>';
+    section.innerHTML = '<div><span>Posts tipo carrusel<br>para Instagram</span></div><div><img src="img/ccdoc-conecta-rrss-carrusels-mobile-1.png" alt="Post tipo carrusel para Instagram de Conecta - parte 1" width="2200" height="952" loading="lazy"><img src="img/ccdoc-conecta-rrss-carrusels-mobile-2.png" alt="Post tipo carrusel para Instagram de Conecta - parte 2" width="2200" height="976" loading="lazy"></div>';
   } else {
-    section.innerHTML = '<img src="img/ccdoc-conecta-rrss-carrusels.png" alt="" style="display: block; width: 100%;">';
+    section.innerHTML = '<img src="img/ccdoc-conecta-rrss-carrusels.png" alt="Post tipo carrusel para Instagram de Conecta" width="2200" height="1436" loading="lazy" style="display: block; width: 100%;">';
   }
 }
 // Ejecutar al cargar la página
