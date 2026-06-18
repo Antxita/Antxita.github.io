@@ -639,6 +639,7 @@ footer {
 #footer-content {
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
     width: 85vw;
     height: 100%;
     font-weight: 400;
